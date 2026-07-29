@@ -3,6 +3,13 @@ image: node:22
 
 stages:
   - test
+  - security
+
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
+
+sast:
+  stage: security
 
 test_api:
   stage: test
